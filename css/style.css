@@ -1,0 +1,779 @@
+
+/* -------------- General --------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --base-color: rgb(253, 194, 0);
+    --base-color-bright: rgb(255, 220, 0);
+    --base-color-alt: rgb(253, 225, 130);
+    --body-color: #F9F9F9;
+    --title-font-color: #241f0f;
+    --subtitle-font-color: #767676;
+
+
+}
+
+
+body {
+    background: var(--body-color);
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--title-font-color);
+    font-size: 1.875rem;
+}
+
+p {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--subtitle-font-color);
+    font-size: 1rem;
+}
+
+a { 
+    text-decoration: none;
+}
+
+section{
+    margin: 5rem 0;
+
+}
+
+.container{
+    margin: 0 1.5rem;
+}
+
+.button{
+    padding: 1rem 2rem;
+    width: 13.75rem;
+    background-color: var(--base-color);
+    border-radius: 0.25rem;
+    color: #ffff;
+    border: #F9F9F9;
+    cursor: pointer;
+    font: 500 1rem 'DM Sans', sans-serif;
+    transition: background .3s;
+}
+
+.button:hover {
+    background-color: var(--base-color-bright);
+}
+
+img{
+    max-width: 770px;
+}
+
+
+
+/* -------------- Dividers --------------*/
+.divider1{
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, rgb(253, 194, 0) 0%, rgba(204, 244, 230, 0.34) 100%);
+}
+
+.divider2{
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,rgba(204, 244, 230, 0.34) 0%, rgb(253, 194, 0) 100%);
+}
+
+/* -------------- Logo --------------*/
+
+.logo {
+    font-size: 1.3125rem;
+    color: var(--title-font-color);
+}
+
+.logo span {
+    color: var(--base-color);
+}
+
+
+/* -------------- Header --------------*/
+
+header {
+    height: 4.5rem;
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+    background: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transition: box-shadow 0.3s;
+    
+    
+}
+
+header.scrolled{
+    box-shadow: 0 0 10px 5px var(--subtitle-font-color);
+}
+
+header nav {
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header nav #menu{
+    opacity: 0;
+    visibility: hidden;
+    top: -50rem;
+}
+
+header nav.show #menu{
+    opacity: 1;
+    visibility: visible;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: var(--body-color);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+header nav.show #menu i{
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    transition: 0.2s;
+    color: var(--title-font-color);
+    font-size: 2rem;
+}
+
+header nav.show #menu i:hover{
+    color: var(--base-color);
+    
+}
+
+header nav.show #menu ul{
+    display: grid;
+    gap: 4rem;
+    text-align: center;
+
+    font: 700 1.875rem 'Poppins', sans-serif;
+}
+
+header nav.show #menu ul li a{
+    color: var(--title-font-color);
+    transition: 0.2s;
+    justify-content: center;
+}
+
+
+nav.show #menu ul li a:hover{
+    color: var(--base-color);
+}
+
+header nav.show #menu a::after{
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    margin: auto;
+    height: 2px;
+    background-color: var(--base-color);
+    transition: width 0.2s;
+}
+
+header nav.show #menu a:hover:after{
+    right: 0;
+    width: 90px;
+}
+
+nav #hamburger{
+    color: var(--base-color);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+nav #hamburger:hover{
+    color: var(--base-color-bright);
+}
+
+nav .openClose{
+    cursor: pointer;
+}
+
+
+
+/* -------------- Main --------------*/
+
+main {
+    margin-top: 4.5rem;
+}
+
+/* -------------- Home --------------*/
+
+#home {
+    overflow: hidden; 
+}
+
+#home .container {
+    margin: 5rem 0;
+    margin-bottom: 0;
+}
+
+#home .image::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-alt);
+    position: absolute;
+    top: -16.8%;
+    left: 16.7%;
+    z-index: 0;
+    border-radius: 4px;
+}
+
+#home .container .image {
+    position: relative;
+    max-width: 94.5%;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    z-index: 1;
+}
+
+#home .container .text {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    text-align: center;
+}
+
+#home .button{
+    margin: auto;
+}
+
+
+
+/* -------------- About --------------*/
+
+
+#about {
+    text-align: center;
+}
+
+
+#about .img::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-alt);
+    position: absolute;
+    top: -8.4%;
+    right: 33.04%;
+    z-index: 0;
+    border-radius: 4px;
+}
+
+#about .img{
+    width: 100%;
+    max-width: 652px;
+    position: relative;
+}
+
+
+#about .img img{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#about .container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    display: grid;
+    gap: 2rem;
+}
+
+#about .container div{
+    display: grid;
+    gap: 1rem;
+
+}
+
+
+/* -------------- Services --------------*/
+
+
+#services .container{
+    text-align: center;
+}
+
+#services .container .text{
+    display: grid;
+    text-align: left;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+#services .cards{
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+}
+
+#services .cards .card{
+    max-width: 352px;
+    padding: 3.625rem 2rem;
+    height: 23.25rem;
+    border-bottom: 4px solid var(--base-color);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+
+}
+
+#services .cards .card h2{
+    margin: 1rem 0;
+}
+
+/* -------------- Testimonials --------------*/
+
+
+#testimonials{
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonials .container{
+    display: grid;
+    gap: 4rem;
+}
+
+#testimonials h2{
+    justify-content: left;
+}
+
+#testimonials .testis{
+    display: grid;
+    gap: 1.5rem;
+    
+}
+
+#testimonials .testis .testi{
+    position: relative;
+    display: grid;
+    padding: 2rem;
+    max-width: 21.5rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.158);
+    height: 100%;
+    justify-content: space-between; 
+    height: 20rem;
+}
+
+#testimonials .testis .testi span{
+    position: relative;
+    top: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--base-color);
+    font-size: 2rem;
+    margin-right: 0.5rem;
+
+}
+
+#testimonials .testis .testi p{
+    color: var(--title-font-color);
+}
+
+#testimonials .testis .testi .pessoa{
+    position: absolute;
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+#testimonials .testis .testi .pessoa img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+#testimonials .testis .testi .pessoa p{
+    color: var(--subtitle-font-color);
+}
+
+/* -------------- Swiper --------------*/
+
+
+.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 769px) {
+        .swiper-slide:first-child {
+          transition: transform 100ms;
+        }
+
+        .swiper-slide:first-child img {
+          transition: box-shadow 500ms;
+        }
+
+        .swiper-slide.swiper-slide-active:first-child {
+          transform: translateX(50%);
+          z-index: 2;
+        }
+
+        .swiper-slide.swiper-slide-active:first-child img {
+          box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        .swiper-slide:nth-child(2) {
+          transition: transform 100ms;
+        }
+
+        .swiper-slide.swiper-slide-next:nth-child(2) {
+          transform: translateX(55%);
+          z-index: 1;
+        }
+
+        .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+          transform: translateX(-50%);
+        }
+
+        .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+          transform: translateX(-55%);
+        }
+
+    }
+/* -------------- Contact --------------*/
+
+#contact .container{
+    display: grid;
+    gap: 2rem;
+
+}
+
+#contact .text{
+    display: grid;
+    gap: 2rem;
+}
+
+#contact .left{
+    display: grid;
+    gap: 2rem;
+}
+
+#contact .button{
+    display: flex;
+    width: 15rem;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+#contact .button .icon-whatsapp{
+    font-size: 1.5rem;
+    color: var(--body-color);
+
+
+}
+
+#contact ul{
+    display: grid;
+    gap: 1rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+#contact ul i{
+    font-size: 1.5rem;
+}
+
+#contact ul li a {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+}
+
+#contact ul li span{
+    color: var(--subtitle-font-color);
+}
+
+
+
+
+/* -------------- Temp --------------*/
+
+i{
+    font-size: 5rem;
+    color: var(--base-color);
+}
+
+
+/* -------------- Footer --------------*/
+#footer{
+    width: 100%;
+    background-color: var(--base-color);
+    padding: 4rem 0;
+    
+}
+
+#footer .container{
+    display: grid;
+    gap: 2rem;
+}
+
+#footer .logo h1,
+#footer .logo span{
+    font-size: 1.3125rem;
+}
+
+#footer .logo span{
+    color: white;
+}
+
+#footer .text p{
+    color: white;
+}
+
+#footer .social{
+    display: inline-flex;
+    gap: 2rem;
+}
+
+#footer .social i{
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+                                    /* -------------- Responsive --------------*/
+
+@media (min-width: 900px) {
+    
+/* -------------- General--------------*/
+h1, h2{
+    font-size: 2.25rem;
+}
+
+.container{
+    margin: 0 7.7rem;
+}
+
+section{
+    margin: 10rem 0;
+}
+
+p{
+    font-size: 20px;
+}
+
+/* -------------- Header --------------*/
+
+header{
+    justify-content: space-between;
+}
+
+header #hamburger, #close{
+    visibility: hidden;
+    opacity: 0;
+}
+
+header nav #menu{
+    visibility: visible;
+    opacity: 1;
+    z-index: 6;
+}
+
+header ul{
+    position: fixed;
+    top: 1.6rem;
+    right: 7.7rem;
+    display: flex;
+    gap: 2rem;
+}
+
+header ul li a{
+    color: var(--title-font-color);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+}
+
+header nav #menu ul li a:hover{
+    color: var(--base-color);
+}
+
+header nav #menu a::after{
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    margin: auto;
+    height: 2px;
+    background-color: var(--base-color);
+    transition: width 0.2s;
+}
+
+header nav#menu a:hover:after{
+    right: 0;
+    width: 90px;
+}
+
+/* -------------- Home --------------*/
+
+#home{
+    margin: 0;
+}
+
+#home .container{
+    display: flex;
+    margin: 10rem 12.4rem 10.5rem 15rem;
+    gap: 7.4rem;
+}
+
+
+
+#home .container .text{
+    text-align: left;
+    display: grid;
+    gap: 1.5rem;
+    max-width: 25rem;
+    order: 1;
+    justify-content: left;
+}
+
+#home .container .image{
+    order: 2;
+    min-width: 25rem;
+    width: 700px;
+    max-height: 440px;
+
+}
+
+
+
+
+
+/* -------------- About --------------*/
+
+#about{
+    display: flex;
+    justify-content: space-between;
+}
+
+#about .img{
+    min-width: 30rem;
+    left: -5rem;
+}
+
+#about .img::before{
+    height: 100px;
+}
+
+
+/* -------------- Services --------------*/
+
+
+#services .container .text{
+    text-align: center;
+
+}
+
+
+
+#services .container .cards{
+    display: flex;
+    place-content: center;
+
+}
+
+#services .container .card h2{
+    font-size: 1.5rem;
+}
+
+#services .container .cards p{
+    font-size: 1rem;
+}
+
+
+#testimonials .container{
+    align-items: center;
+    place-content: center;
+}
+
+#testimonials .container .text{
+    text-align: center;
+}
+
+#testimonials .testis{
+    display: flex;
+}
+
+
+#testimonials .testis p{
+    font-size: 1rem;
+}
+
+#contact .container {
+    display: flex;
+    gap: 16.75rem;
+    align-items: center;
+}
+
+#contact .left{
+    gap: 1.5rem;
+    max-width: 400px;
+}
+
+#contact .right ul{
+    gap: 2rem;
+}
+
+#footer .logo h1,
+#footer .logo span{
+    font-size: 2rem;
+}
+
+#footer .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+}
