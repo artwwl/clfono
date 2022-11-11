@@ -70,6 +70,7 @@ var swiper = new Swiper(".mySwiper", {
         document.documentElement.style.setProperty('--subtitle-font-color', '#dddddd');
         document.documentElement.style.setProperty('--border-color', 'var(--base-color)');
         document.documentElement.style.setProperty('--box-shadow-color', 'rgba(0, 0, 0, 0.8)');
+        document.documentElement.style.setProperty('--scroll-color', 'rgb(253, 194, 0)');
         
         body.classList.remove('bright');
         body.classList.add('dark');
@@ -80,6 +81,7 @@ var swiper = new Swiper(".mySwiper", {
         document.documentElement.style.setProperty('--subtitle-font-color', '#767676');
         document.documentElement.style.setProperty('--border-color', '#E4E4E4');
         document.documentElement.style.setProperty('--box-shadow-color', 'rgba(0, 0, 0, 0.158)');
+        document.documentElement.style.setProperty('--scroll-color', '#767676');
         
         body.classList.remove('dark');
         body.classList.add('bright');

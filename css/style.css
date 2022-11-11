@@ -21,6 +21,7 @@ html{
     --subtitle-font-color: #767676;
     --border-color: #E4E4E4;
     --box-shadow-color: rgba(0, 0, 0, 0.158);
+    --scroll-color: #767676;
     
     
 }
@@ -138,7 +139,7 @@ header {
 }
 
 header.scrolled{
-    box-shadow: 0 0 10px 5px var(--subtitle-font-color);
+    box-shadow: 0 0 10px 5px var(--scroll-color);
 }
 
 header nav {
